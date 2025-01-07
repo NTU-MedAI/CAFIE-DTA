@@ -1,0 +1,32 @@
+read
+    mol pqr /home/ntu/Documents/feiailu/MY_Module/protein_information/Total_electrostatic_energy/1XYZ.pqr
+end
+
+elec name com
+    mg-auto
+    dime 65 65 65
+    cglen 81.6 81.6 81.6
+    fglen 81.6 81.6 81.6
+    fgcent 41.621 32.573 46.6415
+    cgcent 41.621 32.573 46.6415
+    mol 1
+    npbe
+    bcfl mdh
+    srfm smol
+    chgm spl4
+    pdie 2.0
+    sdens 10
+    sdie 78.54
+    srad 1.4
+    temp 300.0
+    mol 1
+    calcenergy total
+    write pot flat /home/ntu/Documents/feiailu/MY_Module/protein_information/Total_electrostatic_energy/output
+    end
+    swin 0.3
+    ion 1 charge 1 radius 2.0
+    ion 2 charge -1 radius 2.0
+    calcforce  no
+    calcenergy comps
+end
+    print elecEnergy com end
